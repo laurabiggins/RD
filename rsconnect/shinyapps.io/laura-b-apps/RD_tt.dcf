@@ -1,0 +1,13 @@
+name: RD_tt
+title: RD_tt
+username:
+account: laura-b-apps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1611760
+bundleId: 2681174
+url: https://laura-b-apps.shinyapps.io/RD_tt/
+when: 1576769262.52833
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data/tt.csv|data-raw/process_raw_data.r

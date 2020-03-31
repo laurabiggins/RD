@@ -1,0 +1,13 @@
+name: RD_tt2
+title: RD_tt2
+username:
+account: laura-b-apps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1612490
+bundleId: 2681833
+url: https://laura-b-apps.shinyapps.io/RD_tt2/
+when: 1576787571.7857
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: data/top trumps - Sheet1.csv|data/tt.csv|data-raw/process_raw_data.r
