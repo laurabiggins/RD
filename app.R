@@ -1,5 +1,6 @@
 source("R/utilities.r")
-load("data/tt_processed.rda")
+#readr::read_rds("data/tt_processed.rds")
+readRDS("data/tt_processed.rds")
 library(shiny)
 library(tidyverse)
 library(plotly)

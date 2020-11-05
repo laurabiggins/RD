@@ -11,7 +11,8 @@ tt_processed <- tt_data %>%
   mutate(percentage_rank = (pos/n_names)*100) %>%
   ungroup
 
-save(tt_processed, file = "data/tt_processed.rda")
+#save(tt_processed, file = "data/tt_processed.rds")
+saveRDS(tt_processed, file = "data/tt_processed.rds")
 #usethis::use_data(tt_data)
 #usethis::use_data(tt_processed) # this only works for packages
 
