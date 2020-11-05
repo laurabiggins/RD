@@ -1,10 +1,9 @@
 source("R/utilities.r")
-#readr::read_rds("data/tt_processed.rds")
-readRDS("data/tt_processed.rds")
 library(shiny)
 library(tidyverse)
 library(plotly)
 
+tt_processed <- readRDS("data/tt_processed.rds")
 # this code only needs to be run once
 all_unique_names <- tt_processed %>%
                         select(Name) %>%
