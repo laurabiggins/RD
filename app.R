@@ -1,5 +1,5 @@
 source("R/utilities.r")
-load("tt_processed.rda")
+load("data/tt_processed.rda")
 library(shiny)
 library(tidyverse)
 library(plotly)
@@ -66,7 +66,7 @@ server <- function(input, output) {
 
     observeEvent(input$select_name, {
         rv$advice = get_advice(input$select_name, tt_processed)
-        update_selected_character()
+        rv$dataset <- mutate(rv$dataset, colour_col = if_else(Name == input$select_name, 1, 2))
     })
     
     output$advice <- renderText(rv$advice)
@@ -113,12 +113,14 @@ server <- function(input, output) {
         } 
     })
     
-    update_selected_character <- reactive({
-        rv$dataset <- mutate(rv$dataset, colour_col = if_else(Name == input$select_name, 1, 2))
-    })
+    # update_selected_character <- reactive({
+    #     rv$dataset <- mutate(rv$dataset, colour_col = if_else(Name == input$select_name, 1, 2))
+    # })
     
     output$scatterplot <- renderPlotly({
      
+        set.seed(1)
+        
         scatter_plot_all_data <- rv$dataset %>%
             ggplot(aes(x = characteristic, y = get(rv$scatter_y), text = Name, color = get(rv$colour_option))) +
             geom_jitter(width = 0.2, height = 0, size = 2.5) +
